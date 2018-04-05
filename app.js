@@ -19,13 +19,11 @@ function populateHTML(currentQuestion){
 }
 
 function quiz(){
- 
   $('#sig').on('click', function(){
      populateHTML(Questions[i]);
   });
-  
+
   $('#eval').on('click', function(){
-    i=i+1;
     var selection = $('input[name=answer]:checked').val();
     var correcto = false;
     console.log(selection,Questions[i].options[Questions[i].answer]);
