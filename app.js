@@ -34,7 +34,6 @@ function quiz(){
     }  
     $('p').text(correcto ? "El resultado es correcto!!!":"El resultado es incorrecto D:");
   });
-  
 }
 
 $(quiz);
