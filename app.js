@@ -7,15 +7,14 @@ var Questions = [
 }
 ];
 function populateHTML(currentQuestion){
-  //$('input').remove();
+  
   $('span').text(null);
-  //$('input').val(null);
   $('label').text(currentQuestion.Question);
   $('#uno').text(currentQuestion.options[0]);
-   $('#inputuno').val(currentQuestion.options[0]);
+  $('#inputuno').val(currentQuestion.options[0]);
+  $('#dos').text(currentQuestion.options[1]);
+  $('#inputdos').val(currentQuestion.options[1]);
   
-   $('#dos').text(currentQuestion.options[1]);
-   $('#inputdos').val(currentQuestion.options[1]);
 }
 
 function quiz(){
@@ -26,7 +25,7 @@ function quiz(){
   $('#eval').on('click', function(){
     var selection = $('input[name=answer]:checked').val();
     var correcto = false;
-    console.log(selection,Questions[i].options[Questions[i].answer]);
+    console.log(`Selection: ${selection}`,`Question: ${Questions[i].options[Questions[i].answer]}`);
     if(selection === Questions[i].options[Questions[i].answer]){
       correcto = true;
     }  
@@ -35,3 +34,4 @@ function quiz(){
 }
 
 $(quiz);
+populateHTML(Questions[i]);
